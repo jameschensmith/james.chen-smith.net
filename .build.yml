@@ -2,7 +2,7 @@ image: alpine/3.17
 oauth: pages.sr.ht/PAGES:RW
 packages:
   - hut
-  - nodejs
+  - npm
 sources:
   - https://git.sr.ht/~jameschensmith/james.chen-smith.net
 environment:
