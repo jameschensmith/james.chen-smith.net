@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css");
+@import "@exampledev/new.css";
 
 nav ul {
   margin: 0;
