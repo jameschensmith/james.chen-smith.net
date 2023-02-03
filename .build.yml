@@ -1,0 +1,17 @@
+image: alpine/3.17
+oauth: pages.sr.ht/PAGES:RW
+packages:
+  - hut
+  - nodejs
+sources:
+  - https://git.sr.ht/~jameschensmith/james.chen-smith.net
+environment:
+  site: james.chen-smith.net
+tasks:
+  - package: |
+      cd $site
+      npm install
+      npx eleventy
+      tar -C public -cvz . > ../site.tar.gz
+  - upload: |
+      hut pages publish -d $site site.tar.gz
