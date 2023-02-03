@@ -6,11 +6,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(EleventyVitePlugin, {
         viteOptions: {
             // Must be different than Eleventy's output directory.
-            publicDir: `_${output}`
-        }
+            publicDir: `_${output}`,
+        },
     })
 
     eleventyConfig.addPassthroughCopy({ './site/static': '/' })
+
+    const defaultTemplateEngine = 'liquid'
 
     return {
         dir: {
@@ -18,5 +20,7 @@ module.exports = function (eleventyConfig) {
             includes: '_includes',
             input: 'site',
         },
+        htmlTemplateEngine: defaultTemplateEngine,
+        markdownTemplateEngine: defaultTemplateEngine,
     }
 }
